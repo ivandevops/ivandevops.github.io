@@ -267,7 +267,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/01/10/SQL/" itemprop="url">常用SQL基础</a></h1>
+                <a class="post-title-link" href="/2020/01/10/SQL/" itemprop="url">常用SQL</a></h1>
         
 
         <div class="post-meta">
@@ -344,7 +344,7 @@
             <blockquote class="blockquote-center">好事多磨</blockquote>
 
 <blockquote>
-<p>关于数据库的基本知识<br>数据库分为关系型数据库和非关系型数据库（NoSQL）<br>关系型数据库适合处理结构化的数据，且数据的规模不能太大<br>非关系型数据库如mongodb，redis，memcache，简化数据库结构、避免影响性能的表链接，摒弃复杂的机构<br>关系型数据库是建立在关系模型上的，关系模型本质上就是存储若干数据的二维表<br>表的一行称为一条记录（record），表的一列称为字段（column）<br>关系型数据库的表之间需要建立一对一多对多的关系，这样才能够按照应用程序的逻辑来组织和存储数据。<br>关系是通过主键和外键进行维护的<br>主键是唯一区分不同记录的字段<br>外键是关联两张表的字段。外键会影响数据库性能<br>通过定义外键约束，关系型数据库可以保证无法插入无效的数据。eg：class表没有id=5的班级，那么student表也无法插入class_id为5的学生。<br>在关系型数据库中，如果有上万甚至上亿条记录，在查找记录的时候，想要获得非常快的速度，就需要使用索引。</p>
+<p>关于数据库的基本知识<br>数据库分为关系型数据库和非关系型数据库（NoSQL）<br>关系型数据库适合处理结构化的数据，且数据的规模不能太大<br>非关系型数据库如mongodb，redis，memcache，简化数据库结构、避免影响性能的表链接，摒弃复杂的机构<br>关系型数据库是建立在关系模型上的，关系模型本质上就是存储若干数据的二维表<br>表的一行称为一条记录（record），表的一列称为字段（column）<br>关系型数据库的表之间需要建立一对一多对多的关系，这样才能够按照应用程序的逻辑来组织和存储数据。<br>关系是通过主键和外键进行维护的<br>主键是唯一区分不同记录的字段<br>外键是关联两张表的字段。外键会影响数据库性能<br>通过定义外键约束，关系型数据库可以保证无法插入无效的数据。eg：class表没有id=5的班级，那么student表也无法插入class_id为5的学生。<br>在关系型数据库中，如果有上万甚至上亿条记录，在查找记录的时候，想要获得非常快的速度，就需要使用索引。<br>约束（constraints）：创建表时规定约束或创建表后添加、删除、命名约束等,包括以下几种<br>NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY,CHECK,DEFAULT<br>UNIQUE 约束唯一标识数据库表中的每条记录。<br>UNIQUE 和 PRIMARY KEY 约束均为列或列集合提供了唯一性的保证。<br>PRIMARY KEY 拥有自动定义的 UNIQUE 约束。<br>请注意，每个表可以有多个 UNIQUE 约束，但是每个表只能有一个 PRIMARY KEY 约束。<br>FOREIGN KEY 一个表在创建的时候可以指定另外一个表中的某一个字段是他的某一个字段的外<br>CHECK 限制值的范围<br>DEFAULT 设置 默认值<br>NOT NULL 如果不向字段添加值，那么无法添加新的记录</p>
 </blockquote>
 <h3 id="DML-数据操作语言"><a href="#DML-数据操作语言" class="headerlink" title="DML 数据操作语言"></a>DML 数据操作语言</h3><h4 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h4><ul>
 <li>select 1+2 用于计算</li>
@@ -356,7 +356,8 @@
 <li>投影查询(别名)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT id, score as sc  FROM students where sc&#x3D;100;  对score列重命名</span><br><span class="line">SELECT id, score  FROM students as s;   对表重命名</span><br></pre></td></tr></table></figure></li>
 <li>聚合查询（统计）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">SELECT COUNT(*) FROM students; </span><br><span class="line">聚合函数：</span><br><span class="line">SUM 计算某一列的和</span><br><span class="line">AVG 计算某一列的平均值</span><br><span class="line">MAX 计算某一列的最大值</span><br><span class="line">MIN 计算某一列的最小值</span><br><span class="line"></span><br><span class="line">where子句无法与聚合函数一起使用</span><br><span class="line">但是可以使用having子句</span><br><span class="line">SELECT Customer,SUM(OrderPrice) FROM Orders</span><br><span class="line">GROUP BY Customer</span><br><span class="line">HAVING SUM(OrderPrice)&lt;2000</span><br></pre></td></tr></table></figure></li>
 <li>对结果集分组<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT Customer,SUM(OrderPrice) FROM Orders GROUP BY Customer</span><br><span class="line">SELECT Customer,OrderDate,SUM(OrderPrice) FROM Orders</span><br><span class="line">GROUP BY Customer,OrderDate</span><br></pre></td></tr></table></figure></li>
-<li>多表查询（根据不同表之间列的关系进行查询，笛卡尔查询，返回M*N条记录）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">内连接 innerjoin， 找出两张表都存在的记录</span><br><span class="line">SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score</span><br><span class="line">FROM students s</span><br><span class="line">INNER JOIN classes c</span><br><span class="line">ON s.class_id &#x3D; c.id; </span><br><span class="line"></span><br><span class="line">LETF （outer）join  找出左表有的，即使右表没有</span><br><span class="line">SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score</span><br><span class="line">FROM students s</span><br><span class="line">LEFT OUTER JOIN classes c</span><br><span class="line">ON s.class_id &#x3D; c.id;</span><br><span class="line"></span><br><span class="line">RIGHT (OUTER) join  找出右表有的，即使左表没有</span><br><span class="line">FULL (OUTER) JOIN   两个表都有的记录</span><br></pre></td></tr></table></figure>
+<li>多表查询（根据不同表之间列的关系进行查询，笛卡尔查询，返回M*N条记录）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">内连接 innerjoin， 找出两张表都存在的记录</span><br><span class="line">SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score</span><br><span class="line">FROM students s</span><br><span class="line">INNER JOIN classes c</span><br><span class="line">ON s.class_id &#x3D; c.id; </span><br><span class="line"></span><br><span class="line">LETF （outer）join  找出左表有的，即使右表没有</span><br><span class="line">SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score</span><br><span class="line">FROM students s</span><br><span class="line">LEFT OUTER JOIN classes c</span><br><span class="line">ON s.class_id &#x3D; c.id;</span><br><span class="line"></span><br><span class="line">RIGHT (OUTER) join  找出右表有的，即使左表没有</span><br><span class="line">FULL (OUTER) JOIN   两个表都有的记录</span><br></pre></td></tr></table></figure></li>
+<li>查找并插入(制作备份)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * INTO new_table_name [IN externaldatabase] </span><br><span class="line">FROM old_tablename</span><br></pre></td></tr></table></figure>
 
 
 
@@ -376,13 +377,8 @@
 <li>删除表中的行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM 表名称 WHERE 列名称 &#x3D; 值</span><br><span class="line">DELETE FROM table_name 删除所有行</span><br><span class="line">DELETE * FROM table_name 同上</span><br></pre></td></tr></table></figure>
 
 
-
-
-
-
 </li>
 </ul>
-<hr>
 
           
         
