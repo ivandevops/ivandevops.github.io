@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="数据类型列表列表的定义1由一系列特定排列的元素组成（可以存储多种类型的数据） 列表的特性123456索引切片（start：end：step、b&#x3D;a[:]复制一个列表）连接（a+b+c）成员操作符（in 和 not in）for 循环遍历列表可嵌套列表、重复（a*3）  列表操作12345列表查看：a.count()、a.index()列表删除：del a[]、a.pop()、a.re">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python基础语法">
+<meta property="og:url" content="http://yoursite.com/2020/01/11/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="程前的博客">
+<meta property="og:description" content="数据类型列表列表的定义1由一系列特定排列的元素组成（可以存储多种类型的数据） 列表的特性123456索引切片（start：end：step、b&#x3D;a[:]复制一个列表）连接（a+b+c）成员操作符（in 和 not in）for 循环遍历列表可嵌套列表、重复（a*3）  列表操作12345列表查看：a.count()、a.index()列表删除：del a[]、a.pop()、a.re">
+<meta property="article:published_time" content="2020-01-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-01-13T10:32:50.005Z">
+<meta property="article:author" content="程前">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/01/11/python基础语法/"/>
+
+
+
+
+
+  <title>python基础语法 | 程前的博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">程前的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/11/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="程前">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.fuimg.com/707539/4fc06a092ef9992c.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="程前的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python基础语法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-11T00:00:00+08:00">
+                2020-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index">
+                    <span itemprop="name">编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"></blockquote>
+
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><h5 id="列表的定义"><a href="#列表的定义" class="headerlink" title="列表的定义"></a>列表的定义</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">由一系列特定排列的元素组成（可以存储多种类型的数据）</span><br></pre></td></tr></table></figure>
+<h5 id="列表的特性"><a href="#列表的特性" class="headerlink" title="列表的特性"></a>列表的特性</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">索引</span><br><span class="line">切片（start：end：step、b&#x3D;a[:]复制一个列表）</span><br><span class="line">连接（a+b+c）</span><br><span class="line">成员操作符（in 和 not in）</span><br><span class="line">for 循环遍历</span><br><span class="line">列表可嵌套列表、重复（a*3）</span><br></pre></td></tr></table></figure>
+
+<h5 id="列表操作"><a href="#列表操作" class="headerlink" title="列表操作"></a>列表操作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">列表查看：a.count()、a.index()</span><br><span class="line">列表删除：del a[]、a.pop()、a.remove()</span><br><span class="line">列表的修改： 通过索引、通过切片</span><br><span class="line">列表的增加：a.extend(list)、a.append(1)、a.insert(0,&#39;samba&#39;) </span><br><span class="line">列表的排序：a.sort()默认按ascii码排、sort永久排序、sorted（）临时排序，random.shuffle（list）原有列表 打乱顺序</span><br></pre></td></tr></table></figure>
+
+<h4 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h4><h5 id="元组的定义"><a href="#元组的定义" class="headerlink" title="元组的定义"></a>元组的定义</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不可变的列表称为元组（但是如果元组里面包含可变数据类型，可以间接修改元组内容）</span><br></pre></td></tr></table></figure>
+<h5 id="元组的特性"><a href="#元组的特性" class="headerlink" title="元组的特性"></a>元组的特性</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">索引及不可赋值、切片、成员操作符、重复、连接、如果元组里只有一个元素就需要加逗号、sorted处理过的元组会返回一个列表</span><br></pre></td></tr></table></figure>
+<h5 id="元组的应用场景"><a href="#元组的应用场景" class="headerlink" title="元组的应用场景"></a>元组的应用场景</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a,b&#x3D; b,a</span><br><span class="line">元组的赋值: 元组有多少个元素就用多少个变量接收</span><br></pre></td></tr></table></figure>
+
+<h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4><h5 id="集合的定义"><a href="#集合的定义" class="headerlink" title="集合的定义"></a>集合的定义</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">集合里面的元素不可重复</span><br><span class="line">s &#x3D; set([list])</span><br><span class="line">list(set(a)) 列表去重</span><br></pre></td></tr></table></figure>
+<h5 id="集合的特性"><a href="#集合的特性" class="headerlink" title="集合的特性"></a>集合的特性</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">成员操作符、for循环</span><br></pre></td></tr></table></figure>
+<h4 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h4><h5 id="字典的定义"><a href="#字典的定义" class="headerlink" title="字典的定义"></a>字典的定义</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字典是一个无序的数据集合</span><br></pre></td></tr></table></figure>
+<h5 id="字典的特性"><a href="#字典的特性" class="headerlink" title="字典的特性"></a>字典的特性</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">成员操作符（判断key是否存在）</span><br><span class="line">for 循环 默认遍历key</span><br></pre></td></tr></table></figure>
+<h5 id="字典的操作"><a href="#字典的操作" class="headerlink" title="字典的操作"></a>字典的操作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">d.pop(key) 弹出指定key对应的value</span><br><span class="line">del d[key] 删除指定的key-value对</span><br><span class="line">d.keys() 、 d.values() 、 d.items()  返回列表</span><br><span class="line">dict.get(&#39;key&#39;) get方法获取指定key对应的value </span><br><span class="line">key存在， 返回对应的值</span><br><span class="line">key不存在 ， 默认返回none，如果需要指定返回值，传值即可，service.get(&#39;http&#39;,&#39;key not exist&#39;)</span><br><span class="line"></span><br><span class="line">字典的增加：</span><br><span class="line">赋值的方式添加或者更改key-value  d[&#39;g&#39;] &#x3D; 10</span><br><span class="line">d.update(&#123;&#39;a&#39;:4,&#39;f&#39;:1&#125;)</span><br><span class="line">如果key值存在，更新value值</span><br><span class="line">如果key值不存在，添加key-value值</span><br><span class="line"></span><br><span class="line">d.setdefaule(&#39;a&#39;,10) 如果key值已经存在，不做修改</span><br><span class="line">如果key值不存在，添加key-value值</span><br><span class="line"></span><br><span class="line">枚举  enumatate  方法可以对字符串，列表，元组，都有效</span><br><span class="line"></span><br><span class="line">zip方法</span><br><span class="line">zip（list1，list2） 生成字典</span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><h5 id="字符串特性"><a href="#字符串特性" class="headerlink" title="字符串特性"></a>字符串特性</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">索引、切片、重复、连接、成员操作符</span><br></pre></td></tr></table></figure>
+<h5 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a.count() 统计</span><br><span class="line">str.split(&#39;.&#39;) 字符串分割，返回一个list</span><br><span class="line">&#39;-&#39;.join(str)  字符串连接</span><br><span class="line">a.find(&#39;w&#39;) 返回该字符所在的索引</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="逻辑语句"><a href="#逻辑语句" class="headerlink" title="逻辑语句"></a>逻辑语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1、if-else</span><br><span class="line">if  条件1：</span><br><span class="line">    语句1</span><br><span class="line">else：</span><br><span class="line">    语句2</span><br><span class="line">语句1 if 条件 else 语句2</span><br><span class="line"></span><br><span class="line">2、if-elif-else</span><br><span class="line"></span><br><span class="line">3、break 退出循环</span><br><span class="line">4、continue 跳出当前循环</span><br></pre></td></tr></table></figure>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">位置参数  形参实参个数位置保持一致</span><br><span class="line">默认参数  形参实参个数可以不一致，默认参数可以改变</span><br><span class="line">可变参数  *p 原理是对元组进行解包 ，个数不一致</span><br><span class="line">关键字参数  **kwargs  是一个字典可以传递任意个数的key-value对</span><br></pre></td></tr></table></figure>
+<h4 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">局部变量：函数内部定义的普通变量，函数执行结束，变量自动删除</span><br><span class="line">全局变量：全局使用</span><br></pre></td></tr></table></figure>
+<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><h4 id="面向对象的定义"><a href="#面向对象的定义" class="headerlink" title="面向对象的定义"></a>面向对象的定义</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">面向过程侧重于怎么做，面向对象侧重谁来做</span><br></pre></td></tr></table></figure>
+<h4 id="面向对象的特性"><a href="#面向对象的特性" class="headerlink" title="面向对象的特性"></a>面向对象的特性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">类：是一群具有相同特征或行为的事物的一个统称，不能直接使用</span><br><span class="line">特征：类的属性，这个类创造出的对象有什么特征</span><br><span class="line">行为：类的方法，这个类创造出的对象有什么行为</span><br><span class="line">在程序开发中先有类再有对象，类名：大驼峰命名法，每个单词首字母大写，单词单词之间无下划线</span><br><span class="line">生命周期：一个对象从调用类名创建，生命周期开始，一个对象的del方法被调用，生命周期就结束了</span><br></pre></td></tr></table></figure>
+<h4 id="面向对象的属性和方法"><a href="#面向对象的属性和方法" class="headerlink" title="面向对象的属性和方法"></a>面向对象的属性和方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">初始化方法：</span><br><span class="line">init是python对象中的内置方法，定义一个类有哪些属性</span><br><span class="line">使用类名创建一个对象的时候，1、解释器会为对象在内存中分配空间 2、调用初始化方法init为对象的属性设置初始值</span><br><span class="line">内置方法：</span><br><span class="line">__del__  ： 对象从内存中销毁前，会自动调用</span><br><span class="line">__str__ ： 返回对象的描述信息，print对象，可以自定义内容，默认打印16对象进制地址</span><br><span class="line">私有属性和私有方法：</span><br><span class="line">（eg：__run（） __age&#x3D;18） 对象的某些属性或者方法可能只希望在对象的内部使用，而不希望在外部访问。在定义私有属性时，init方法中不需要加相对应属性的参数</span><br><span class="line">类属性：</span><br><span class="line">定义：类是一个特殊的对象，类对象在内存中只有一份，通过该对象可以创建出很多实例。除了封装实例的属性和方法外，类有自己的属性和方法，通过类名.的方法可以直接访问类的属性和方法，类属性就是给类对象定义的属性，通常用来记录与这个类相关的特征</span><br><span class="line">应用场景：计算一个类创建了多少个实例对象</span><br><span class="line">类方法； </span><br><span class="line">@classmethod</span><br><span class="line">def xxx():</span><br><span class="line">通过类名.方法名调用类方法</span><br><span class="line">静态方法：</span><br><span class="line">@staticmethod</span><br><span class="line">没有参数，不需要访问实例属性和方法</span><br><span class="line">通过类名+方法 直接使用</span><br></pre></td></tr></table></figure>
+<h4 id="面向对象三大特性：封装、继承、多态"><a href="#面向对象三大特性：封装、继承、多态" class="headerlink" title="面向对象三大特性：封装、继承、多态"></a>面向对象三大特性：封装、继承、多态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">封装 ： 面向对象编程的一大特点，将属性和方法封装到一个类中</span><br><span class="line">继承： 实现代码的重用，相同的代码不需要重复的书写</span><br><span class="line">    单继承 class 类名（父类名）： def 子类特有的方法，子类拥有父类特有的属性和方法</span><br><span class="line">    继承的传递：继承的传递性：c继承于b，b继承于a，那么c就拥有a和b的所有属性和方法</span><br><span class="line">    重写父类的方法：覆盖父类的方法、扩展父类的方法、初始化方法也可以被扩展或者重写</span><br><span class="line"></span><br><span class="line">    多继承： 多继承可以让子类对象同时具有多个父类的属性和方法，父类方法重复，先继承先使用，（b,a）.</span><br><span class="line">    子类不能在自己的方法内部访问父类的私有属性和私有方法，子类可以通过父类的公有方法间接访问私有属性私有方法</span><br><span class="line">    新式类（python3）：没有指定父类默认父类为object</span><br><span class="line">多态：在封装和继承的前提下，不同的子类调用相同的方法，产生不同的执行结果</span><br></pre></td></tr></table></figure>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">第一种：</span><br><span class="line">try:</span><br><span class="line">    ...</span><br><span class="line">except:</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">第二种： 对异常分类捕获，自定义输出分类异常内容</span><br><span class="line">try：</span><br><span class="line">    ...</span><br><span class="line">except xxxError:</span><br><span class="line">    ...</span><br><span class="line">except xxxError:</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">第三种： finally 无论是否有异常都会执行的代码</span><br><span class="line">try：</span><br><span class="line">    ...</span><br><span class="line">except xxxError:</span><br><span class="line">    ...</span><br><span class="line">except xxxError as result</span><br><span class="line">    print(&quot;XXXX&quot;,result)</span><br><span class="line">finally:</span><br><span class="line">    ....</span><br><span class="line"></span><br><span class="line">第四种： 主动抛出异常</span><br><span class="line">def input_passwd():</span><br><span class="line">    pwd &#x3D; input(&quot;请输入密码：&quot;)</span><br><span class="line">    if len(pwd) &gt;&#x3D; 0:</span><br><span class="line">        return pwd</span><br><span class="line">    ex &#x3D; Exception(&quot;密码长度不够！&quot;)</span><br><span class="line">    raise ex</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">    input_passwd()</span><br><span class="line"></span><br><span class="line">except Exception as result:</span><br><span class="line">    print result</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">第五种： 函数内断言</span><br><span class="line">def func(num, div):</span><br><span class="line">    assert (div!&#x3D;0), &#39;dic 不能等于0&#39;</span><br><span class="line">    return num&#x2F;div</span><br><span class="line"></span><br><span class="line">func(10, 0)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://i1.fuimg.com/707539/70e500e70742370c.jpg" alt="程前 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://i1.fuimg.com/707539/a9a73dafa69e4ce2.jpg" alt="程前 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/10/SQL/" rel="next" title="常用SQL">
+                <i class="fa fa-chevron-left"></i> 常用SQL
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/11/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="prev" title="正则表达式">
+                正则表达式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://i1.fuimg.com/707539/4fc06a092ef9992c.jpg"
+                alt="程前" />
+            
+              <p class="site-author-name" itemprop="name">程前</p>
+              <p class="site-description motion-element" itemprop="description">若为自由故</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#列表"><span class="nav-number">1.1.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#列表的定义"><span class="nav-number">1.1.1.</span> <span class="nav-text">列表的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表的特性"><span class="nav-number">1.1.2.</span> <span class="nav-text">列表的特性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表操作"><span class="nav-number">1.1.3.</span> <span class="nav-text">列表操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#元组"><span class="nav-number">1.2.</span> <span class="nav-text">元组</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#元组的定义"><span class="nav-number">1.2.1.</span> <span class="nav-text">元组的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#元组的特性"><span class="nav-number">1.2.2.</span> <span class="nav-text">元组的特性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#元组的应用场景"><span class="nav-number">1.2.3.</span> <span class="nav-text">元组的应用场景</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集合"><span class="nav-number">1.3.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#集合的定义"><span class="nav-number">1.3.1.</span> <span class="nav-text">集合的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#集合的特性"><span class="nav-number">1.3.2.</span> <span class="nav-text">集合的特性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字典"><span class="nav-number">1.4.</span> <span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#字典的定义"><span class="nav-number">1.4.1.</span> <span class="nav-text">字典的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字典的特性"><span class="nav-number">1.4.2.</span> <span class="nav-text">字典的特性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字典的操作"><span class="nav-number">1.4.3.</span> <span class="nav-text">字典的操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">1.5.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串特性"><span class="nav-number">1.5.1.</span> <span class="nav-text">字符串特性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串操作"><span class="nav-number">1.5.2.</span> <span class="nav-text">字符串操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑语句"><span class="nav-number">2.</span> <span class="nav-text">逻辑语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">3.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数参数"><span class="nav-number">3.1.</span> <span class="nav-text">函数参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量的作用域"><span class="nav-number">3.2.</span> <span class="nav-text">变量的作用域</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象"><span class="nav-number">4.</span> <span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象的定义"><span class="nav-number">4.1.</span> <span class="nav-text">面向对象的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象的特性"><span class="nav-number">4.2.</span> <span class="nav-text">面向对象的特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象的属性和方法"><span class="nav-number">4.3.</span> <span class="nav-text">面向对象的属性和方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象三大特性：封装、继承、多态"><span class="nav-number">4.4.</span> <span class="nav-text">面向对象三大特性：封装、继承、多态</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常处理"><span class="nav-number">5.</span> <span class="nav-text">异常处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件操作"><span class="nav-number">6.</span> <span class="nav-text">文件操作</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">程前</span>
+
+  
+</div>
+
+
+
+<!-- 
+  <div class="powered-by"></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
