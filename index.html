@@ -425,6 +425,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/15/%E8%BE%93%E5%85%A5url%E5%8F%91%E7%94%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="程前">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i1.fuimg.com/707539/4fc06a092ef9992c.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="程前的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/15/%E8%BE%93%E5%85%A5url%E5%8F%91%E7%94%9F/" itemprop="url">面试题-浏览器中输入一个url会发生什么</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-15T00:00:00+08:00">
+                2020-01-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" itemprop="url" rel="index">
+                    <span itemprop="name">面试准备</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote class="blockquote-center">有何胜利而言，挺住就是一切</blockquote>
+
+
+
+
+<p>通过键盘输入网址： 操作系统会捕获到键盘的一个输入事件，会把这个url显示到界面上<br>输入回车: 操作系统也会捕获这个事件并反馈给浏览器<br>浏览器查找域名，并作dns解析查找域名的ip地址<br>如果浏览器已经缓存，那么就和这个ip的主机进行tcp的三次握手，进行一个tcp的连接<br>如果没有就会走一个dns的查询，会请求dns服务器拿到ip，再和这个主机进行三次握手在建立一个tcp的连接<br>握手完了之后，会把堆这个网址的请求，封装成一个数据包，基于http协议，发送到远端的服务器<br>一般的话远端是一个nginx服务器，nginx收到这个数据包后会进行解析，拿到这个url，交给具体处理该url的服务器<br>（一般这些服务器都会做负载均衡）服务器有缓存的话直接返回缓存（页面级），没有缓存的话，会访问数据库，或访问redis等，把需要的数据封装好，渲染完后发送给代理，代理再发送给前端，浏览器会把这个页面渲染出来。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/14/go%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1732,166 +1879,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/09/beautifulsoup/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="程前">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://i1.fuimg.com/707539/4fc06a092ef9992c.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="程前的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/09/beautifulsoup/" itemprop="url">beautifulsoup库解析</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-09T00:00:00+08:00">
-                2020-01-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%88%AC%E8%99%AB/" itemprop="url" rel="index">
-                    <span itemprop="name">爬虫</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote class="blockquote-center">没有谁会为你踏雪而来，喜欢的风景要自己的看</blockquote>
-
-<blockquote>
-<p>beautifulsoup是一个可以从HTMl或者xml文件中提取数据的python库，它能够通过你喜欢的转换器实现惯用文档的导航查找。</p>
-</blockquote>
-<h3 id="beautifulsoup库简介"><a href="#beautifulsoup库简介" class="headerlink" title="beautifulsoup库简介"></a>beautifulsoup库简介</h3><h4 id="两种引用方法"><a href="#两种引用方法" class="headerlink" title="两种引用方法"></a>两种引用方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import bs  </span><br><span class="line">from bs4 import BeautifulSoup</span><br></pre></td></tr></table></figure>
-<h4 id="解析器"><a href="#解析器" class="headerlink" title="解析器"></a>解析器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">html.parser python的内置标准库，执行速度始终，文档容错能力强</span><br><span class="line">xml  速度快，唯一支持xml的解析器，需要安装外部依赖库</span><br><span class="line">lxml 速度快，文档容错能力强，需要安装外部依赖库</span><br><span class="line">html5lib 最好的容错性，以浏览器方式解析文档，生成html5格式的文档，速度慢</span><br></pre></td></tr></table></figure>
-
-<h4 id="beautifulsoup类的基本元素"><a href="#beautifulsoup类的基本元素" class="headerlink" title="beautifulsoup类的基本元素"></a>beautifulsoup类的基本元素</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">beautifulsoup将复杂的html文档转换程一个复杂的树形结构，每个节点都是一个python对象，所有对象可以归纳为以下四种。</span><br><span class="line">tag  标签。有name和attributes属性</span><br><span class="line">        name  </span><br><span class="line">                tag.name&#x3D;&#39;eg&#39;</span><br><span class="line">        attrs </span><br><span class="line">                tag.attrs 输出tag的属性</span><br><span class="line">                tag[&#39;class&#39;] &#x3D; &#39;verybold&#39; 属性可以被添加和修改，操作与字典一致</span><br><span class="line">                tag[&#39;class&#39;] &#x3D; 如果class有多个值会返回一个列表</span><br><span class="line">beautifulsoup 表示一个文档的全部内容</span><br><span class="line">navigablestring 标签内&lt;&gt; 和&lt;&#x2F;&gt;中的字符串</span><br><span class="line">        tag.string</span><br><span class="line">comment  标签内字符串注释部分 </span><br><span class="line">        tag.string</span><br></pre></td></tr></table></figure>
-
-<h4 id="遍历文档树"><a href="#遍历文档树" class="headerlink" title="遍历文档树"></a>遍历文档树</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">soup &#x3D; BeautifulSoup(html_doc, &#39;html.parser&#39;)</span><br><span class="line">soup.head</span><br><span class="line"># &lt;head&gt;&lt;title&gt;The Dormouse&#39;s story&lt;&#x2F;title&gt;&lt;&#x2F;head&gt;</span><br><span class="line">soup.title</span><br><span class="line"># &lt;title&gt;The Dormouse&#39;s story&lt;&#x2F;title&gt;</span><br><span class="line">soup.body.b  &#x2F;&#x2F;注意：通过点属性的方式只能获取当前名字的第一个tag</span><br><span class="line"># &lt;b&gt;The Dormouse&#39;s story&lt;&#x2F;b&gt;</span><br><span class="line"></span><br><span class="line">soup.find_all(&#39;a&#39;)  &#x2F;&#x2F;获取所有是a标签的元素，返回一个列表</span><br><span class="line">tag.contents 可以将tag的直接子节点以列表的方式输出</span><br><span class="line">tag.children 直接子节点生成器</span><br><span class="line">tag.descendtants 返回所有子孙节点生成器</span><br><span class="line">tag.string 适用于仅有一个子节点</span><br><span class="line">tag.strings  有多个子节点</span><br><span class="line">tag.stripped_string 去除空白内容</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-
-<h4 id="搜索文档树-重要"><a href="#搜索文档树-重要" class="headerlink" title="搜索文档树(重要)"></a>搜索文档树(重要)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">find_all（）参数name,keyword,</span><br><span class="line"></span><br><span class="line">find_all（name）</span><br><span class="line">name是过滤器。</span><br><span class="line">过滤器类型：</span><br><span class="line">    字符串：</span><br><span class="line">        soup.find_all(&#39;b&#39;)</span><br><span class="line">    列表： 返回列表中包含的标签元素</span><br><span class="line">        soup.find_all([&quot;a&quot;, &quot;b&quot;])</span><br><span class="line">    正则表达式：</span><br><span class="line">        soup.find_all(re.compile(&quot;^b&quot;)):</span><br><span class="line">        True： 返回所有标签</span><br><span class="line">        soup.find_all(True):</span><br><span class="line">    方法：下面方法校验了，包含class属性，不包含id属性</span><br><span class="line">        def has_class_but_no_id(tag):</span><br><span class="line">            return tag.has_attr(&#39;class&#39;) and not tag.has_attr(&#39;id&#39;)</span><br><span class="line">        soup.find_all(has_class_but_no_id)</span><br><span class="line">        </span><br><span class="line">find_all（keyword） </span><br><span class="line">根据属性来查找</span><br><span class="line">soup.find_all(id&#x3D;&#39;link2&#39;)</span><br><span class="line"># [&lt;a class&#x3D;&quot;sister&quot; href&#x3D;&quot;http:&#x2F;&#x2F;example.com&#x2F;lacie&quot; id&#x3D;&quot;link2&quot;&gt;Lacie&lt;&#x2F;a&gt;]</span><br><span class="line">soup.find_all(href&#x3D;re.compile(&quot;elsie&quot;))</span><br><span class="line"># [&lt;a class&#x3D;&quot;sister&quot; href&#x3D;&quot;http:&#x2F;&#x2F;example.com&#x2F;elsie&quot; id&#x3D;&quot;link1&quot;&gt;Elsie&lt;&#x2F;a&gt;]</span><br><span class="line">soup.find_all(id&#x3D;True)</span><br><span class="line"># [&lt;a class&#x3D;&quot;sister&quot; href&#x3D;&quot;http:&#x2F;&#x2F;example.com&#x2F;elsie&quot; id&#x3D;&quot;link1&quot;&gt;Elsie&lt;&#x2F;a&gt;,</span><br><span class="line">#  &lt;a class&#x3D;&quot;sister&quot; href&#x3D;&quot;http:&#x2F;&#x2F;example.com&#x2F;lacie&quot; id&#x3D;&quot;link2&quot;&gt;Lacie&lt;&#x2F;a&gt;,</span><br><span class="line">#  &lt;a class&#x3D;&quot;sister&quot; href&#x3D;&quot;http:&#x2F;&#x2F;example.com&#x2F;tillie&quot; id&#x3D;&quot;link3&quot;&gt;Tillie&lt;&#x2F;a&gt;]</span><br><span class="line">指定多个属性</span><br><span class="line">soup.find_all(href&#x3D;re.compile(&quot;elsie&quot;), id&#x3D;&#39;link1&#39;)</span><br><span class="line"># [&lt;a class&#x3D;&quot;sister&quot; href&#x3D;&quot;http:&#x2F;&#x2F;example.com&#x2F;elsie&quot; id&#x3D;&quot;link1&quot;&gt;three&lt;&#x2F;a&gt;]</span><br><span class="line">指定特殊属性</span><br><span class="line">data_soup.find_all(attrs&#x3D;&#123;&quot;data-foo&quot;: &quot;value&quot;&#125;)</span><br><span class="line"># [&lt;div data-foo&#x3D;&quot;value&quot;&gt;foo!&lt;&#x2F;div&gt;]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">根据css类名来查找</span><br><span class="line">soup.find_all(&quot;a&quot;, class_&#x3D;&quot;sister&quot;)</span><br><span class="line">soup.find_all(class_&#x3D;re.compile(&quot;itl&quot;))</span><br><span class="line">soup.find_all(&quot;a&quot;, attrs&#x3D;&#123;&quot;class&quot;: &quot;sister&quot;&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">CSS选择器：</span><br><span class="line">soup.select(&quot;head &gt; title&quot;) &#x2F;&#x2F; 通过标签关系</span><br><span class="line">soup.select(&quot;.sister&quot;) &#x2F;&#x2F;通过类名</span><br><span class="line">soup.select(&#39;a[href&#x3D;&quot;http:&#x2F;&#x2F;example.com&#x2F;elsie&quot;]&#39;) &#x2F;&#x2F;通过属性值来查找</span><br></pre></td></tr></table></figure>
-
-
-
-
-<p>参考文档：<a href="https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/#id27" target="_blank" rel="noopener">https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/#id27</a></p>
-<p>–</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1946,7 +1933,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
